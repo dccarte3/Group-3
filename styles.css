@@ -1,8 +1,71 @@
-body {
-    background-color: #44475a;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body, html  { 
+    height: 100vh;
+    width: 100vw;
+    background-color: #282a36;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+    float: left;
+}
+
+h1 {
+    margin: 2vh;
     color: #ff79c6;
 }
 
-main {
+div.gamesList {
+    height: 40vh;
+    width: 100vw;
     color: #f8f8f2;
+    background-color: rgb(56, 58, 89);
+    float: left;
+    clear: both;
+}
+
+div.gameCell {
+    height: 30vh;
+    width: 18vw;
+    background-color: #44475a;
+    border-radius: 30px;
+    margin: 5vh;
+    text-align: center;
+    float: left;
+}
+
+h2 {
+    margin-top: 2vh;
+}
+
+img.gamethumb {
+    margin-top: 2vh;
+}
+
+div.reviewsection {
+    height: 30vh;
+    width: 100vw;
+    float: left;
+    clear: both;
+}
+
+div.reviewblock {
+    width: 90vw;
+    margin: 2vh;
+    padding: 1vh;
+    text-align: center;
+    background-color: #f8f8f2;
+    border-radius: 15px;
+}
+
+div.reviewblock h2, h3, p{
+    margin-left: 2vw;
+    margin-top: 1vh;
+    text-align: left;
 }
