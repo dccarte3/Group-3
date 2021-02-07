@@ -4,7 +4,7 @@
     font-family: sans-serif;
 }
 
-body, html  { 
+body, html  {
     height: 100vh;
     width: 100vw;
     background-color: #282a36;
@@ -65,7 +65,7 @@ div.reviewblock {
 }
 
 div.reviewblock h2, h3, p{
-    margin-left: 2vw;
+    margin-left: 1vw;
     margin-top: 1vh;
     text-align: left;
 }
