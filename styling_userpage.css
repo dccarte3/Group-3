@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body, html  {
+    height: 100vh;
+    width: 100vw;
+    background-color: #282a36;
+}
+
+.col-01 {width: 		  8.33%; }
+.col-02 {width: 		 16.66%; }
+.col-03 {width: 		 25.00%; }
+.col-04 {width: 		 33.33%; }
+.col-05 {width: 		 41.66%; }
+.col-06 {width: 		 50.00%; }
+.col-07 {width: 		 58.33%; }
+.col-08 {width: 		 66.66%; }
+.col-09 {width: 		 75.00%; }
+.col-10 {width: 		 83.33%; }
+.col-11 {width: 		 91.66%; }
+.col-12 {width: 		100.00%; }
+
+[class*="col-"] {
+	float: 				left;
+    border-radius: 		10px;
+    border: transparent transparent;
+}
+
+/* need to be fixed!!!!
+
+form.searchBar{
+    max-width: 20vw;
+}
+
+form.searchBar input[type=text] {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ff79c6;
+    float: center;
+    width: 80%;
+    background: #f1f1f1;
+    display: inline-block;
+  }
+  
+  form.searchBar button {
+    float: right;
+    width: 20%;
+    padding: 10px;
+    background: #ff79c6;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #ff79c6;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.searchBar button:hover {
+    background: #990285;
+  }
+  
+  form.searchBar::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+*/
+
+
+
+.pageHeader h1{
+    font-size: 5vh;
+    margin: 2vh;
+    color: #ff79c6;
+    display: inline-block;
+}
+
+.notification {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 8px 14px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    float: right;
+    opacity: 50%;
+    margin: 2vh 1vw 0 0 ;
+  }
+  
+  .notification:hover {
+    background: red;
+  }
+  
+  .notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 2px 7px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+  }
+
+.username {
+    font-weight: 400;
+    margin: 3vh 0 0 0;
+    color: #ff79c6;
+}
+
+#userId {
+    color: thistle;
+    margin: 1vh 0 3vh 0;
+    opacity: 50%;
+}
+
+.header {
+    min-height: 50vh;
+    background: rgb(56, 58, 89);
+    color: white;
+    clip-path: ellipse(100vw 60vh at 50% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.details {
+    text-align: center;
+}
+  
+.profile-pic {
+    height: 11vh;
+    width: 6vw;
+    object-fit: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+  
+.stats .col-04 {
+    width: 10vw;
+}
+  
