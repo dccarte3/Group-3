@@ -46,6 +46,35 @@
       </div>
     </header>
   </section>
+  <section class="tabs">
+    <button class="tablink" onclick="openTab('review', this, '#ff79c6')" id="defaultOpen">Reviews</button>
+    <button class="tablink" onclick="openTab('post', this, '#ff79c6')">Post</button>
+    <button class="tablink" onclick="openTab('games', this, '#ff79c6')">Games Played</button>
+    <button class="tablink" onclick="openTab('followed', this, '#ff79c6')">Followed Providers</button>
+    
+    <div id="review" class="tabcontent">
+      <h1>Reviews</h1>
+      <p>Here you can view all your reviews</p>
+    </div>
+    
+    <div id="post" class="tabcontent">
+      <h1>Post</h1>
+      <p>Here you can view all posts</p>
+    </div>
+    
+    <div id="games" class="tabcontent">
+      <h1>Games Played</h1>
+      <p>Check out a list of games you played</p>
+    </div>
+    
+    <div id="followed" class="tabcontent">
+      <h1>Followed Providers</h1>
+      <p>View a list of providers followed</p>
+    </div>
+
+
+  </section>
   
+  <script src="./js_userpage.js"></script>
 </body>
 </html>
