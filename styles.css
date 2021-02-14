@@ -21,7 +21,7 @@ h1 {
     color: #ff79c6;
 }
 
-div.gamesList {
+.purplebg {
     height: 40vh;
     width: 100vw;
     color: #f8f8f2;
@@ -30,7 +30,7 @@ div.gamesList {
     clear: both;
 }
 
-div.gameCell {
+.gameCell {
     height: 30vh;
     width: 18vw;
     background-color: #44475a;
@@ -40,7 +40,12 @@ div.gameCell {
     float: left;
 }
 
-h2 {
+.center {
+    margin: auto;
+    float: none;
+}
+
+.celltitle {
     margin-top: 2vh;
 }
 
