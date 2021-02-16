@@ -16,14 +16,14 @@ app.get('/newgame', function (req, res) {
     // let game = JSON.stringify(data)
     games.push(data);
     let newGames = JSON.stringify(games);
-    fs.writeFile('games.json', newGames, (err) => {
+    fs.writeFile('website/games.json', newGames, (err) => {
         console.log("Game saved");
     })
     res.redirect('/');
 })
 
 function getList() {
-    let data = fs.readFileSync('games.json');
+    let data = fs.readFileSync('website/games.json');
     let games = JSON.parse(data);
     return games;
 }

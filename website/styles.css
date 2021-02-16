@@ -65,17 +65,13 @@ body, html  {
 
 .main {
     min-height: 50vh;
+    width: 100vw;
     background: rgb(56, 58, 89);
     color: white;
     display: flex;
+    float: left;
+    clear: both;
     align-items: center;
-    justify-content: center;
-}
-
-.cell {
-    background-color: #44475a;
-    padding: 2vh;
-    border-radius: 15px;
 }
 
 .gameCell {
@@ -88,6 +84,15 @@ body, html  {
     float: left;
 }
 
+.cell {
+    width: 18vw;
+    margin: auto;
+    background-color: #44475a;
+    padding: 2vh;
+    border-radius: 15px;
+    overflow: auto;
+}
+
 .cell > * {
     margin: 0 2vh;
 }
@@ -98,6 +103,7 @@ body, html  {
 
 .thmbnail {
     margin-top: 2vh;
+    max-width: 90%;
 }
 
 .btn {
@@ -136,6 +142,6 @@ body, html  {
 }
 
 .reviewblock h2, h3, p{
-   margin: 0 1vh;
+    margin: 0 1vh;
     text-align: left;
 }

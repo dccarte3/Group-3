@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="games.json"></script>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="..\styles.css">
     <title>Game Management</title>
 </head>
@@ -16,13 +18,13 @@
             <span class="badge">3</span>
           </a>
     </header>
-    <div class="main"> 
-        <div class="btn add">
-            <a href="./addgames.html">Add Game</a>
-        </div>   
-        <div class="gameCell">
+    <div class="btn add">
+        <a href="./addgames.html">Add Game</a>
+    </div>   
+    <div class="main" id="gamesList"> 
+        <!-- <div class="gameCell">
             <h2 class="celltitle label">Hades</h2>
-            <img src="..\Sample-images\hades.jpg" alt="hades icon" class="thmbnail">
+            <img src=".\Sample-images\hades.jpg" alt="hades icon" class="thmbnail">
         </div>
         <div class="gameCell">
             <h2 class="celltitle label">Among Us</h2>
@@ -31,11 +33,11 @@
         <div class="gameCell">
             <h2 class="celltitle label">Cyberpunk 2077</h2>
             <img src="..\Sample-images\cyberpunk.jpg" alt="hades icon" class="thmbnail">
-        </div>
-        <div class="gameCell">
+        </div> -->
+        <!-- <div class="gameCell">
             <h2 class="celltitle label">Bugsnax</h2>
             <img src="..\Sample-images\bugsnax.jpg" alt="hades icon" class="thmbnail">
-        </div>
+        </div> -->
             <!-- <h2>List of Games</h2>
             <ol>
                 <li>Example Game 1</li>
