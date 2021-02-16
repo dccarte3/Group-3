@@ -1,0 +1,23 @@
+{
+  "name": "game_mgmt",
+  "version": "1.0.0",
+  "description": "Game Management",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dccarte3/Group-3.git"
+  },
+  "author": "Group 3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dccarte3/Group-3/issues"
+  },
+  "homepage": "https://github.com/dccarte3/Group-3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}

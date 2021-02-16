@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\styles.css">
+    <title>Game Management</title>
+</head>
+<body>
+    <header class="pageHeader">
+        <h1>Games For You</h1>
+        
+        <a href="#" class="notification">
+            <span>Inbox</span>
+            <span class="badge">3</span>
+          </a>
+    </header>
+    <div class="main">
+        <div class="cell">
+            <h1 class="">Add Game</h2>
+            <form action="/newgame" method="GET">
+                <h2 class="label">Title</h2>
+                <input type="text" id="title" name="title" required><br>
+                
+                <h2 class="label">Upload Thumbnail</h2>
+                <input type="file" id="img" name="img" required><br>
+                
+                <h2 class="label">Tier</h2>
+                <input type="radio" id="t1" name="tier" value="1" required>
+                <label for="t1">Tier One</label><br>
+                <input type="radio" id="t2" name="tier" value="2" required>
+                <label for="t2">Tier Two</label><br>
+                <input type="radio" id="t3" name="tier" value="3" required>
+                <label for="t3">Tier Three</label><br>
+                <input type="submit" class="btn" value="Add">
+            </form>
+        </div>
+    </div>
+    <script>
+        const addgame = (ev) => {
+            let games = [];
+            
+            ev.preventDefault();
+            
+            let game = {
+                "title": document.getElementById("title").value,
+                "image": document.getElementById("img").value,
+                "tier": getTier()
+            }
+            
+            games.push(game);
+            document.forms[0].reset();
+            
+            
+        }
+        
+        function getTier() {
+            var radios = document.getElementsByName('tier');
+
+            for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                return radios[i].value;
+                break;
+            }
+            }
+        }
+    </script>
+</body>
+</html>
