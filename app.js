@@ -13,13 +13,17 @@ app.use(express.static('website'));
 app.get('/newgame', function (req, res) {
     let data = req.query
     let games = getList();
-    // let game = JSON.stringify(data)
-    games.push(data);
+    // 1 - let game = JSON.stringify(data)
+    games.push(data)
     let newGames = JSON.stringify(games);
     fs.writeFile('website/games.json', newGames, (err) => {
         console.log("Game saved");
     })
     res.redirect('/');
+})
+
+app.get('/update', function (req, res) {
+    let data = req.query;
 })
 
 function getList() {

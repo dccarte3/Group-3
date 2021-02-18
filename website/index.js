@@ -1,5 +1,3 @@
-console.log('Hey')
-var gamesList;
 fetch("games.json")
     .then(response => response.json())
     .then(json => addGames(json));
@@ -28,4 +26,20 @@ function addGames(j) {
         let listSection = document.getElementById('gamesList')
         listSection.appendChild(cell);
     }
+    gamesList = j;
+}
+
+function deleteGame(target) {
+    fetch("games.json")
+    .then(response => response.json())
+    .then(json => {
+        for (var i = 0; i < json.length; i++) {
+            let game = json[i]
+            if (game.title == target) {
+                delete json[i]
+            }
+        }
+        fetch('/update')
+        location.reload();
+    });
 }
