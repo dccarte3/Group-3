@@ -37,34 +37,5 @@
             </form>
         </div>
     </div>
-    <script>
-        const addgame = (ev) => {
-            let games = [];
-            
-            ev.preventDefault();
-            
-            let game = {
-                "title": document.getElementById("title").value,
-                "image": document.getElementById("img").value,
-                "tier": getTier()
-            }
-            
-            games.push(game);
-            document.forms[0].reset();
-            
-            
-        }
-        
-        function getTier() {
-            var radios = document.getElementsByName('tier');
-
-            for (var i = 0, length = radios.length; i < length; i++) {
-            if (radios[i].checked) {
-                return radios[i].value;
-                break;
-            }
-            }
-        }
-    </script>
 </body>
 </html>

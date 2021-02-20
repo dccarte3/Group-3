@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var fs = require('fs');
+var bodyParser = require("body-parser");
 var app = express();
 const PORT = 3000
 
@@ -9,6 +10,8 @@ var server = app.listen(PORT, () => {
 });
 
 app.use(express.static('website'));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.get('/newgame', function (req, res) {
     let data = req.query
@@ -22,8 +25,12 @@ app.get('/newgame', function (req, res) {
     res.redirect('/');
 })
 
-app.get('/update', function (req, res) {
-    let data = req.query;
+app.post('/update', function (req, res) {
+    let data = req.body;
+    let newGames = JSON.stringify(data);
+    fs.writeFile('website/games.json', newGames, (err) => {
+        console.log('Deleted Game')
+    })
 })
 
 function getList() {
