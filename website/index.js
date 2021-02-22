@@ -3,8 +3,9 @@ fetch("games.json")
     .then(json => addGames(json));
 
 function addGames(j) {
+    // takes json and loops thru and makes and adds elements to the DOM
     for (var i = 0; i < j.length; i++) {
-        if(j[i] != null) {
+        if(j[i].title != null) {
             let cell = document.createElement("div");
             cell.setAttribute('class', 'gameCell');
             
@@ -14,6 +15,7 @@ function addGames(j) {
             
             let image = document.createElement("img");
             image.setAttribute('src', './Sample-images/' + j[i].img);
+            console.log(j[i].img)
             image.setAttribute('class', 'thmbnail');
             
             let tier = document.createElement("h2");
@@ -38,23 +40,24 @@ function addGames(j) {
 }
 
 function deleteGame(target) {
+    // target is the title of the game to be deleted
+    // fetch asks server for the current list of games and returns a json file called json
     fetch("games.json")
     .then(response => response.json())
     .then(json => {
         var newList = [];
+        // loops thru json and adds any games that do not match to a new list
         for (var i = 0; i < json.length; i++) {
             let game = json[i]
             if (game.title != target) {
                 newList.push(game)
             }
-            // if (game.title == target) {
-            //     delete json[i]
-            // }
         }
+        // gets the list of games in the DOM and clears them
         let listSection = document.getElementById('gamesList')
-        // console.log(listSection)
         listSection.innerHTML = ''
         addGames(newList)
+        // uses fetch to send a POST req to update game list json
         fetch('/update',{
             headers: {
                 'Accept': 'application/json',
@@ -67,8 +70,4 @@ function deleteGame(target) {
         .catch(function(res){console.log(res)})
         // location.reload();
     });
-}
-
-function test(text) {
-    console.log(text)
 }

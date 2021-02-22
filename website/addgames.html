@@ -19,12 +19,12 @@
     <div class="main">
         <div class="cell">
             <h1 class="">Add Game</h2>
-            <form action="/newgame" method="GET">
+            <form action="/newgame" method="POST" enctype="multipart/form-data">
                 <h2 class="label">Title</h2>
                 <input type="text" id="title" name="title" required><br>
                 
                 <h2 class="label">Upload Thumbnail</h2>
-                <input type="file" id="img" name="img" required><br>
+                <input type="file" id="img" name="img"><br>
                 
                 <h2 class="label">Tier</h2>
                 <input type="radio" id="t1" name="tier" value="1" required>
