@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\styles.css">
+    <title>Game Management</title>
+</head>
+<body>
+    <header class="pageHeader">
+        <h1><a href="/" class="alink">Games For You</a></h1>
+        
+        <a href="#" class="notification">
+            <span>Inbox</span>
+            <span class="badge">3</span>
+          </a>
+    </header>
+    <div class="main">
+        <div class="cell">
+            <h1 class="">Login</h2>
+            <form action="/userlogin" method="POST">
+                <h2 class="label">User Name</h2>
+                <input type="text" name="username" id="user" required>
+                <h2 class="label">Password</h2>
+                <input type="password" name="password" id="pass" minlength="8" required>
+                <input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

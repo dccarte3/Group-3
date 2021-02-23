@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\styles.css">
+    <title>Game Management</title>
+</head>
+<body>
+    <header class="pageHeader">
+        <h1><a href="/" class="alink">Games For You</a></h1>
+        
+        <a href="#" class="notification">
+            <span>Inbox</span>
+            <span class="badge">3</span>
+          </a>
+    </header>
+    <div class="main">
+        <div class="wide cell">
+            <h1 class="">Review for: <span id='forGame'></span></h2>
+            <form action="/addreview" method="POST">
+                <h2 class="label">Title</h2>
+                <input type="text" name="rtitle" id="rtitle" size="40" required>
+                <h2 class="label"></h2>
+                <textarea name="content" id="content" cols="80" rows="15"></textarea>
+                
+                <input type="hidden" name="user" value="username" id='user'>
+                <input type="hidden" name="gtitle" value="title" id='gtitle'>
+                
+                <input type="submit" class="btn" value="Add Review">
+            </form>
+        </div>
+    </div>
+    <script>
+        var gameTitle = "<%= title %>"
+        var userName = "<%= user %>"
+        var heading = document.getElementById('forGame').textContent = gameTitle
+        document.getElementById('gtitle').setAttribute('value', gameTitle)
+        document.getElementById('user').setAttribute('value', userName)
+    </script>
+</body>
+</html>

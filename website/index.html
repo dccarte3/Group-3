@@ -11,44 +11,32 @@
 </head>
 <body>
     <header class="pageHeader">
-        <h1>Games For You</h1>
+        <h1 class="headTitle"><a href="/" class="alink">Games For You</a></h1>
         
-        <a href="#" class="notification">
-            <span>Inbox</span>
-            <span class="badge">3</span>
-          </a>
+        <div class="btn user">
+            <a href="./login" class="alink">Login</a>
+        </div>
+        <div class="btn user">
+            <a href="./signup" class="alink">Sign Up</a>
+        </div>
     </header>
-    <div class="btn add">
-        <a href="./addgames.html">Add Game</a>
-    </div>
+    <nav class="navbar">
+        <div class="btn add">
+            <a href="./addgames" class='alink'>Add Game</a>
+        </div>
+        <div class="btn notification">
+            <a href="#" class="alink">Inbox</a>
+            <span class="badge">3</span>
+        </div>
+    </nav>
     <div class="main" id="gamesList"> 
-        <!-- <div class="gameCell">
-            <h2 class="celltitle label">Hades</h2>
-            <img src=".\Sample-images\hades.jpg" alt="hades icon" class="thmbnail">
-        </div>
-        <div class="gameCell">
-            <h2 class="celltitle label">Among Us</h2>
-            <img src="..\Sample-images\amongus.jpg" alt="hades icon" class="thmbnail">
-        </div>
-        <div class="gameCell">
-            <h2 class="celltitle label">Cyberpunk 2077</h2>
-            <img src="..\Sample-images\cyberpunk.jpg" alt="hades icon" class="thmbnail">
-        </div> -->
-        <!-- <div class="gameCell">
-            <h2 class="celltitle label">Bugsnax</h2>
-            <img src="..\Sample-images\bugsnax.jpg" alt="hades icon" class="thmbnail">
-        </div> -->
-            <!-- <h2>List of Games</h2>
-            <ol>
-                <li>Example Game 1</li>
-                <li>Example Game 2</li>
-                <li>Example Game 3</li>
-            </ol>
-            <p>This list is just a place holder. Final product will not look like this.</p> -->
+        
     </div>
-    <div class="reviewsection">
+    
+    <div class="reviewsection" id='mainReviews'>
         <h1>Reviews</h1>
-        <div id="review1" class="reviewblock">
+        <div class='btn review'><a href="/review" class='alink' id='reviewLink'>Review +</a></div>
+        <!-- <div id="review1" class="reviewblock">
             <h2>Review Title</h2>
             <h3>Author Name</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus debitis vero enim veniam tenetur consequatur, recusandae fugit aliquid officia veritatis quasi, explicabo iusto, aperiam libero ullam obcaecati ducimus ratione nemo?</p>
@@ -57,7 +45,7 @@
             <h2>Review Title</h2>
             <h3>Author Name</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus debitis vero enim veniam tenetur consequatur, recusandae fugit aliquid officia veritatis quasi, explicabo iusto, aperiam libero ullam obcaecati ducimus ratione nemo?</p>
-        </div>
+        </div> -->
     </div>
 
     

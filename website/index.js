@@ -1,26 +1,37 @@
+var selectedGame = '';
+var reviews;
+
 fetch("games.json")
+.then(response => response.json()) // response.json()
+.then(json => addGames(json));
+
+fetch("reviews.json")
     .then(response => response.json())
-    .then(json => addGames(json));
+    .then(json => reviews = json)
+
 
 function addGames(j) {
     // takes json and loops thru and makes and adds elements to the DOM
+    var listSection = document.getElementById('gamesList')
     for (var i = 0; i < j.length; i++) {
         if(j[i].title != null) {
             let cell = document.createElement("div");
             cell.setAttribute('class', 'gameCell');
+            let game = j[i].title
+            cell.addEventListener('click', () => {selectGame(game, cell)})
             
             let title = document.createElement("h2");
-            title.innerHTML = j[i].title;
+            title.textContent = j[i].title;
             title.setAttribute('class', 'celltitle label');
             
             let image = document.createElement("img");
-            image.setAttribute('src', './Sample-images/' + j[i].img);
-            console.log(j[i].img)
+            image.setAttribute('src', './image/' + j[i].img);
+            // image.setAttribute('src', './Sample-images/' + j[i].img);
             image.setAttribute('class', 'thmbnail');
             
             let tier = document.createElement("h2");
             tier.setAttribute('class', 'celltitle label')
-            tier.innerHTML = "Tier: " + j[i].tier;
+            tier.textContent = "Tier: " + j[i].tier;
             
             let delBtn = document.createElement('button')
             delBtn.setAttribute('class', 'delete')
@@ -32,11 +43,19 @@ function addGames(j) {
             cell.appendChild(image);
             cell.appendChild(tier);
             
-            let listSection = document.getElementById('gamesList')
+            let reviewContainer = document.createElement('div')
+            reviewContainer.setAttribute('id', j[i].title + "_reviews")
+            reviewContainer.setAttribute('class', 'container')
+            console.log(j[i].title + "_reviews")
+            reviewContainer.style.display = 'none'
+            var mainReviewSection = document.getElementById('mainReviews')
+            mainReviewSection.appendChild(reviewContainer)
+            
             listSection.appendChild(cell);
         }
     }
-    gamesList = j;
+    selectGame(j[0].title, listSection.children[0])
+    // gamesList = j;
 }
 
 function deleteGame(target) {
@@ -70,4 +89,53 @@ function deleteGame(target) {
         .catch(function(res){console.log(res)})
         // location.reload();
     });
+}
+
+function selectGame(game, elem) {
+    selectedGame = game
+    let link = document.getElementById("reviewLink")
+    link.setAttribute('href', '/review/' + game + '/default')
+    
+    var main = document.getElementById("gamesList")
+    for (child of main.children) {
+        child.style.backgroundColor = '#44475a'
+    }
+    
+    var allSections = document.getElementsByClassName('container')
+    for (section of allSections) {
+        section.style.display = 'none'
+    }
+    
+    getReviews(game)
+    var reviewsSection = document.getElementById(game + '_reviews')
+    reviewsSection.style.display = 'inline-block'
+    
+    elem.style.backgroundColor = "#6272a4"
+}
+
+function getReviews(title) {
+    var filteredReviews = []
+    for (review of reviews) {
+        if (review.title == title) {
+            reviewBlock = document.createElement('div')
+            reviewBlock.setAttribute('class', 'reviewblock')
+            
+            var subject = document.createElement('h2')
+            subject.textContent = review.title
+            reviewBlock.appendChild(subject)
+            
+            var author = document.createElement('h3')
+            author.textContent = review.Username
+            reviewBlock.appendChild(author)
+            
+            var content = document.createElement('p')
+            content.textContent = review.content
+            reviewBlock.appendChild(content)
+            
+            // document.body.appendChild(reviewBlock)
+            var container = document.getElementById(title + '_reviews')
+            container.appendChild(reviewBlock)
+        }
+    }
+    
 }
