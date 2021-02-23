@@ -97,9 +97,9 @@
             <label for="msg"><b>Message</b></label>
             <br>
             <!--
-            <textarea placeholder="Type message.." name="msg" id="userMsg" required></textarea>
+            <textarea placeholder="Type message.." name="msg"required></textarea>
             -->
-            <textarea placeholder="Type message.." name="msg" required></textarea>
+            <p>The following message is received: <?php echo $_POST["msg"];?></p>
 
             <button type="submit" class="btn">Send</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
